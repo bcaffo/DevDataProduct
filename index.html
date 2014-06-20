@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Analyzing Admissions at UCB</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Analyzing Admissions at UCB">
+  <meta name="author" content="Kumaran">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Analyzing Admissions at UCB</h1>
+    <h2>Course Project for Developing Data Products</h2>
+    <p>Kumaran<br/>Learner</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Introduction</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Course Project for Developing Data Products Course</li>
+<li>Uses UCBAdmissions dataset</li>
+<li>Gets Input - Gender and Admission Status</li>
+<li>Computes Mean and Standard Deviation</li>
+<li>Displays results and Piechart</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>DataSet</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Standard R dataset - UCBAdmissions</li>
+</ul>
+
+<pre><code class="r">library(datasets)
+data(UCBAdmissions)
+admissions &lt;- as.data.frame(UCBAdmissions)
+summary(admissions)
+</code></pre>
+
+<pre><code>##       Admit       Gender   Dept       Freq    
+##  Admitted:12   Male  :12   A:4   Min.   :  8  
+##  Rejected:12   Female:12   B:4   1st Qu.: 80  
+##                            C:4   Median :170  
+##                            D:4   Mean   :189  
+##                            E:4   3rd Qu.:302  
+##                            F:4   Max.   :512
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Input</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Takes two Inputs - Admission Status and Gender</li>
+<li>Implemented as Radio boxes</li>
+</ul>
+
+<pre><code class="r"># Sample code snippet
+
+# radioButtons(&#39;Gender&#39;,&#39;Gender : &#39;, c(&#39;Male&#39; = &#39;Male&#39;, &#39;Female&#39; = &#39;Female&#39;)
+# ), br(),
+
+# radioButtons(&#39;Admit&#39;,&#39;Admission Status : &#39;, c(&#39;Admitted&#39; = &#39;Admitted&#39;,
+# &#39;Rejected&#39; = &#39;Rejected&#39;) ),
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Computations</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Filter dataset based on selected filters</li>
+<li>Compute mean</li>
+<li>Compute SD</li>
+<li>Output the results and the Pie Chart</li>
+</ul>
+
+<pre><code class="r"># Sample code snippet (show only, not execute)
+
+# mean1 &lt;- mean(admissions[admissions$Admit == input$Admit &amp;
+# admissions$Gender==input$Gender,4])
+
+# sd1 &lt;- sd(admissions[admissions$Admit == input$Admit &amp;
+# admissions$Gender==input$Gender,4])
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Introduction'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='DataSet'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Input'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Computations'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title=''>
+         5
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
